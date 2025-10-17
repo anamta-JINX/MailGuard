@@ -1,131 +1,200 @@
-**MailGuard: Smart Spam Detection System**
-
-MailGuard is a **machine learning-based spam detection system** built using the **Naive Bayes Classifier**.
-It analyzes the frequency of words and phrases in email content to accurately classify messages as **Spam** or **Not Spam**.
+Perfect — here’s a **professional README.md** file you can directly copy-paste into your GitHub repository.
+It’s complete, beginner-friendly, and lists every step, dependency, and explanation of how your system works.
 
 ---
 
-🚀 Project Overview
+## **MailGuard: Smart Email & Screenshot Spam Detection System**
 
-The project demonstrates how **Natural Language Processing (NLP)** and **Machine Learning** can be combined to filter out unwanted emails efficiently.
-MailGuard uses **TF-IDF vectorization** and a **Multinomial Naive Bayes model** to learn patterns from email datasets and identify common spam traits.
+MailGuard is a **hybrid intelligent spam detection system** that can identify spam from **typed email text** or **email screenshots (images)** using **Machine Learning** and **Optical Character Recognition (OCR)**.
 
----
+It provides a clean **Graphical User Interface (GUI)** built with **Tkinter**, allowing users to interactively:
 
-🧠 Key Features
-
-* **Preprocessing:** Cleaned and vectorized email text using TF-IDF
-* **Model:** Trained a Naive Bayes classifier for text classification
-* **Evaluation Metrics:** Accuracy, Precision, and Recall
-* **Visualization:** Plotted model performance metrics using Matplotlib
-* **Custom Prediction:** Allows users to test with their own email text samples
+* Enter an email manually to analyze.
+* Upload a screenshot of an email and extract text automatically.
+* View real-time prediction results (Spam or Safe).
+* Visualize model performance using `matplotlib` graphs.
 
 ---
 
-📊 Model Performance
+## **📸 Features**
 
-| Metric    | Score |
-| --------- | ----- |
-| Accuracy  | 0.976 |
-| Precision | 1.000 |
-| Recall    | 0.831 |
-
-MailGuard achieves a **high accuracy and perfect precision**, meaning it almost never misclassifies non-spam emails as spam.
-
----
-
-🧩 Technologies Used
-
-* **Python 3**
-* **Pandas**
-* **Scikit-learn**
-* **Matplotlib**
-* **Natural Language Processing (NLP)**
+✅ Detect spam from **text input**
+✅ Detect spam from **email screenshots** (via OCR)
+✅ Real-time **result visualization** with colored feedback
+✅ Clean **Tkinter GUI**
+✅ Uses **TF-IDF vectorization** and **Naive Bayes model**
+✅ Displays **model accuracy, precision, recall graphs**
 
 ---
 
-🗂️ Dataset
+## **🧠 Tech Stack & Libraries**
 
-The model was trained using the **Spam Email Dataset** from Kaggle.
-It contains labeled examples of spam and ham (non-spam) messages.
-
-**Columns used:**
-
-* `Category` → Indicates whether the message is spam or ham
-* `Message` → Contains the email text content
-
----
-
-⚙️ How It Works
-
-1. **Data Loading** – Import and clean the dataset.
-2. **Text Transformation** – Convert text to numerical format using TF-IDF.
-3. **Training** – Fit a Multinomial Naive Bayes model.
-4. **Testing** – Predict spam vs. non-spam on unseen data.
-5. **Evaluation** – Compute accuracy, precision, recall, and classification report.
-6. **Visualization** – Display results using bar charts for clarity.
+| Category                        | Libraries Used                           |
+| ------------------------------- | ---------------------------------------- |
+| **Machine Learning**            | `scikit-learn`, `pandas`, `numpy`        |
+| **OCR (Image Text Extraction)** | `opencv-python`, `pytesseract`, `Pillow` |
+| **Visualization**               | `matplotlib`                             |
+| **GUI**                         | `tkinter` (built-in with Python)         |
 
 ---
 
-🧾 Example Output
+## **⚙️ Installation & Setup**
+
+### **1. Clone the Repository**
+
+```bash
+git clone https://github.com/anamta-JINX/MailGuard-Spam-Detection.git
+cd MailGuard-Spam-Detection
+```
+
+### **2. Install Required Libraries**
+
+Run this in your terminal (inside your project folder):
+
+```bash
+pip install pandas numpy scikit-learn opencv-python pytesseract pillow matplotlib
+```
+
+---
+
+### **3. Install Tesseract OCR**
+
+MailGuard uses **Tesseract OCR** to read text from images.
+
+#### **Windows**
+
+1. Download from: [https://github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki)
+2. Install it, then note the install path (e.g. `C:\Program Files\Tesseract-OCR\tesseract.exe`)
+3. Add that path to your system’s **Environment Variables → PATH**.
+
+#### **Mac**
+
+```bash
+brew install tesseract
+```
+
+#### **Linux**
+
+```bash
+sudo apt install tesseract-ocr
+```
+
+---
+
+### **4. Dataset**
+
+Ensure you have the file **`spam.csv`** in your project directory.
+This dataset should have at least these two columns:
 
 ```
-Accuracy: 0.976
+Category, Message
+```
+
+Where:
+
+* `Category` = “spam” or “ham”
+* `Message` = actual email text
+
+You can use the [Kaggle Spam SMS dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset).
+
+---
+
+## **🚀 Run the Program**
+
+### **Option 1: Run from VS Code / Terminal**
+
+```bash
+python MailGuard.py
+```
+
+### **Option 2: Double-click MailGuard.py**
+
+If Python is installed correctly, it’ll open a graphical window automatically.
+
+---
+
+## **💡 How It Works**
+
+1. **Training Phase**
+
+   * Loads the dataset and cleans it.
+   * Converts text to numerical form using **TF-IDF Vectorizer**.
+   * Trains a **Naive Bayes (MultinomialNB)** classifier.
+
+2. **Evaluation Phase**
+
+   * Displays Accuracy, Precision, and Recall scores.
+   * Generates graphs using **matplotlib**.
+
+3. **User Interaction**
+
+   * GUI offers two main buttons:
+
+     * **Enter Text for Analysis** → user types an email.
+     * **Upload Screenshot for Analysis** → user selects an image file.
+   * The extracted or entered text is classified as **Spam (red)** or **Safe (green)**.
+
+---
+
+## **📊 Visualization**
+
+The system shows two visualizations:
+
+1. **Model Performance Graphs** — Accuracy, Precision, Recall
+2. **Result Visualization** — Spam (red) / Safe (green)
+
+---
+
+## **🧩 Example Output**
+
+```
+Accuracy: 0.969
 Precision: 1.0
-Recall: 0.831
+Recall: 0.777
+```
 
-Custom Email Prediction: Spam
+GUI:
+
+* “Enter text for analysis” button → opens a text input box.
+* “Upload screenshot for analysis” button → opens file picker window.
+* “Analyze” button → predicts and displays color-coded results.
+
+---
+
+## **📦 File Structure**
+
+```
+MailGuard-Spam-Detection/
+│
+├── spam.csv                 # Dataset
+├── MailGuard.py             # Main program
+├── README.md                # Documentation (this file)
+└── requirements.txt         # (Optional) dependency list
 ```
 
 ---
 
-📥 How to Run the Project
+## **🧰 Optional: Create requirements.txt**
 
-1. Clone the repository:
+You can create a `requirements.txt` for easy dependency installation:
 
-   ```bash
-   git clone https://github.com/anamta-JINX/MailGuard-Spam-Detection.git
-   ```
-2. Navigate to the project folder:
-
-   ```bash
-   cd MailGuard-Spam-Detection
-   ```
-3. Install required dependencies:
-
-   ```bash
-   pip install pandas scikit-learn matplotlib
-   ```
-4. Run the script:
-
-   ```bash
-   python MailGuard.py
-   ```
-
----
-
-📩 Sample Test
-
-You can modify this line in the code to test your own email:
-
-```python
-sample = ["Congratulations! You've won a free trip to Dubai. Click below to claim."]
+```bash
+pip freeze > requirements.txt
 ```
 
-Change the message and re-run the code to see how MailGuard classifies it!
+Then in any new environment:
+
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
-Author:
+## **💬 Author**
 
-**Anamta Gohar**
-GitHub: [anamta-JINX](https://github.com/anamta-JINX)
+**Anamta Gohar (@anamta-JINX)**
+Created as part of a Machine Learning Lab project — focusing on **Human-Computer Interaction (HCI)** and **AI integration** for intelligent user experience.
 
 ---
 
-Acknowledgment
-
-Dataset Source: [Kaggle - SMS Spam Collection Dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset)
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+Would you like me to include screenshots of the GUI and graphs section (with Markdown image placeholders) so your README looks visually impressive on GitHub too?
