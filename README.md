@@ -1,8 +1,3 @@
-Perfect — here’s a **professional README.md** file you can directly copy-paste into your GitHub repository.
-It’s complete, beginner-friendly, and lists every step, dependency, and explanation of how your system works.
-
----
-
 ## **MailGuard: Smart Email & Screenshot Spam Detection System**
 
 MailGuard is a **hybrid intelligent spam detection system** that can identify spam from **typed email text** or **email screenshots (images)** using **Machine Learning** and **Optical Character Recognition (OCR)**.
@@ -16,7 +11,7 @@ It provides a clean **Graphical User Interface (GUI)** built with **Tkinter**, a
 
 ---
 
-## **📸 Features**
+## **Features**
 
 ✅ Detect spam from **text input**
 ✅ Detect spam from **email screenshots** (via OCR)
@@ -99,7 +94,7 @@ You can use the [Kaggle Spam SMS dataset](https://www.kaggle.com/datasets/uciml/
 
 ---
 
-## **🚀 Run the Program**
+## **Run the Program**
 
 ### **Option 1: Run from VS Code / Terminal**
 
@@ -113,7 +108,7 @@ If Python is installed correctly, it’ll open a graphical window automatically.
 
 ---
 
-## **💡 How It Works**
+## **How It Works**
 
 1. **Training Phase**
 
@@ -136,7 +131,7 @@ If Python is installed correctly, it’ll open a graphical window automatically.
 
 ---
 
-## **📊 Visualization**
+## **Visualization**
 
 The system shows two visualizations:
 
@@ -145,7 +140,7 @@ The system shows two visualizations:
 
 ---
 
-## **🧩 Example Output**
+## **Example Output**
 
 ```
 Accuracy: 0.969
@@ -161,7 +156,7 @@ GUI:
 
 ---
 
-## **📦 File Structure**
+## **File Structure**
 
 ```
 MailGuard-Spam-Detection/
@@ -174,7 +169,7 @@ MailGuard-Spam-Detection/
 
 ---
 
-## **🧰 Optional: Create requirements.txt**
+## **Optional: Create requirements.txt**
 
 You can create a `requirements.txt` for easy dependency installation:
 
@@ -190,11 +185,9 @@ pip install -r requirements.txt
 
 ---
 
-## **💬 Author**
+## **Author**
 
 **Anamta Gohar (@anamta-JINX)**
 Created as part of a Machine Learning Lab project — focusing on **Human-Computer Interaction (HCI)** and **AI integration** for intelligent user experience.
 
 ---
-
-Would you like me to include screenshots of the GUI and graphs section (with Markdown image placeholders) so your README looks visually impressive on GitHub too?
